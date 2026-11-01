@@ -1,5 +1,6 @@
 
 import json
+import os
 import operator
 from datetime import date, timedelta
 from urllib.error import HTTPError, URLError
@@ -7,18 +8,34 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 import ollama
-
-
-MODEL = "qwen3:4b"
-MAX_TOOL_ROUNDS = 5
+from dotenv import load_dotenv
 
 
 # -----------------------------
-# 1. Actual Python tool functions
+# 1. Configuration
+# -----------------------------
+
+load_dotenv()
+
+MODEL = "qwen3:4b"
+MAX_TOOL_ROUNDS = 5
+API_TIMEOUT_SECONDS = 10
+
+REST_API = os.getenv("REST_API")
+
+if not REST_API:
+    raise ValueError(
+        "REST_API is missing. Add it to your .env file."
+    )
+
+
+# -----------------------------
+# 2. Actual Python tool functions
 # -----------------------------
 
 def calculator(a: float, operation: str, b: float) -> dict:
     """Perform basic arithmetic."""
+
     operations = {
         "add": operator.add,
         "subtract": operator.sub,
@@ -35,12 +52,14 @@ def calculator(a: float, operation: str, b: float) -> dict:
     try:
         result = operations[operation](a, b)
         return {"result": result}
+
     except (ArithmeticError, TypeError) as exc:
         return {"error": str(exc)}
 
 
 def date_utility(action: str, days: int = 0) -> dict:
-    """Return the current date, weekday, or a date offset."""
+    """Return today's date, weekday, or a date offset."""
+
     today = date.today()
 
     if action == "today":
@@ -54,6 +73,7 @@ def date_utility(action: str, days: int = 0) -> dict:
 
     if action == "add_days":
         target = today + timedelta(days=days)
+
         return {
             "start_date": today.isoformat(),
             "days_added": days,
@@ -65,27 +85,48 @@ def date_utility(action: str, days: int = 0) -> dict:
 
 
 def country_lookup(country: str) -> dict:
-    """Read basic country information from the REST Countries API."""
+    """Look up country information using REST Countries."""
+
+    country = country.strip()
+
+    if not country:
+        return {"error": "Country name cannot be empty."}
+
+    # Original REST Countries v3.1 endpoint.
     url = (
         "https://restcountries.com/v3.1/name/"
-        + quote(country.strip(), safe="")
+        + quote(country, safe="")
         + "?fields=name,capital,population,region"
     )
 
-    request = Request(
-        url,
-        headers={"User-Agent": "Day3-AgenticAI-Learning-Project"},
-    )
+    headers = {
+        "User-Agent": "Day3-AgenticAI-Learning-Project"
+    }
+
+    # Only send the API key if your provider's documentation
+    # specifies Bearer-token authentication for this endpoint.
+    if REST_API:
+        headers["Authorization"] = f"Bearer {REST_API}"
+
+    request = Request(url, headers=headers)
 
     try:
-        with urlopen(request, timeout=10) as response:
-            data = json.loads(response.read().decode("utf-8"))
+        with urlopen(
+            request,
+            timeout=API_TIMEOUT_SECONDS,
+        ) as response:
+            data = json.loads(
+                response.read().decode("utf-8")
+            )
 
         if not data:
-            return {"error": "No country information found."}
+            return {
+                "error": f"No country found for '{country}'."
+            }
 
-        # Return a concise result rather than the full API response.
+        # The v3.1 name endpoint returns a list of countries.
         item = data[0]
+
         return {
             "name": item.get("name", {}).get("common"),
             "capital": item.get("capital", []),
@@ -95,30 +136,55 @@ def country_lookup(country: str) -> dict:
 
     except HTTPError as exc:
         if exc.code == 404:
-            return {"error": f"No country found for '{country}'."}
-        return {"error": f"Country API returned HTTP {exc.code}."}
+            return {
+                "error": f"No country found for '{country}'."
+            }
 
-    except (URLError, TimeoutError, json.JSONDecodeError, OSError) as exc:
+        if exc.code in (401, 403):
+            return {
+                "error": (
+                    "Country API authentication failed. "
+                    "Check your API key and provider documentation."
+                )
+            }
+
+        return {
+            "error": f"Country API returned HTTP {exc.code}."
+        }
+
+    except (
+        URLError,
+        TimeoutError,
+        json.JSONDecodeError,
+        OSError,
+    ) as exc:
         return {"error": f"Country lookup failed: {exc}"}
 
 
-# ---------------------------------
-# 2. Tell the LLM which tools exist
-# ---------------------------------
+# -----------------------------
+# 3. Tell the LLM which tools exist
+# -----------------------------
 
 TOOLS = [
     {
         "type": "function",
         "function": {
             "name": "calculator",
-            "description": "Perform basic arithmetic on two numbers.",
+            "description": (
+                "Perform basic arithmetic on two numbers."
+            ),
             "parameters": {
                 "type": "object",
                 "properties": {
                     "a": {"type": "number"},
                     "operation": {
                         "type": "string",
-                        "enum": ["add", "subtract", "multiply", "divide"],
+                        "enum": [
+                            "add",
+                            "subtract",
+                            "multiply",
+                            "divide",
+                        ],
                     },
                     "b": {"type": "number"},
                 },
@@ -139,12 +205,17 @@ TOOLS = [
                 "properties": {
                     "action": {
                         "type": "string",
-                        "enum": ["today", "weekday", "add_days"],
+                        "enum": [
+                            "today",
+                            "weekday",
+                            "add_days",
+                        ],
                     },
                     "days": {
                         "type": "integer",
                         "description": (
-                            "Number of days to add; required for add_days."
+                            "Number of days to add; "
+                            "required for add_days."
                         ),
                     },
                 },
@@ -157,15 +228,17 @@ TOOLS = [
         "function": {
             "name": "country_lookup",
             "description": (
-                "Look up a country's capital, population, and region "
-                "using a read-only public API."
+                "Look up a country's capital, population, "
+                "and region using the REST Countries API."
             ),
             "parameters": {
                 "type": "object",
                 "properties": {
                     "country": {
                         "type": "string",
-                        "description": "Country name, such as India or Japan.",
+                        "description": (
+                            "Country name, such as India or Japan."
+                        ),
                     },
                 },
                 "required": ["country"],
@@ -175,12 +248,12 @@ TOOLS = [
 ]
 
 
-# ---------------------------------
-# 3. Dispatch tool calls to Python
-# ---------------------------------
+# -----------------------------
+# 4. Dispatch tool calls to Python
+# -----------------------------
 
 def execute_tool(name: str, arguments: dict) -> dict:
-    """Execute only the tools explicitly allowed by this application."""
+    """Execute only tools explicitly allowed by this application."""
 
     try:
         if name == "calculator":
@@ -198,24 +271,27 @@ def execute_tool(name: str, arguments: dict) -> dict:
         return {"error": f"Invalid tool arguments: {exc}"}
 
 
-# ---------------------------------
-# 4. Let the LLM use tools in a loop
-# ---------------------------------
+# -----------------------------
+# 5. Agent loop
+# -----------------------------
 
 def ask_assistant(user_text: str) -> str:
     messages = [
         {
             "role": "system",
             "content": (
-                "You are a helpful assistant. Use the provided tools "
-                "when they are useful. Use calculator for arithmetic, "
+                "You are a helpful assistant. Use the provided "
+                "tools when useful. Use calculator for arithmetic, "
                 "date_utility for date questions, and country_lookup "
                 "for country facts. Do not invent tool results. "
                 "Explain errors honestly. Do not claim a tool ran "
                 "unless the application returned its result."
             ),
         },
-        {"role": "user", "content": user_text},
+        {
+            "role": "user",
+            "content": user_text,
+        },
     ]
 
     for _ in range(MAX_TOOL_ROUNDS):
@@ -227,14 +303,17 @@ def ask_assistant(user_text: str) -> str:
             options={"temperature": 0},
         )
 
-        # Preserve the assistant response, including any tool calls.
+        # Preserve the assistant message and any tool calls.
         messages.append(response.message)
 
         tool_calls = response.message.tool_calls
 
-        # No more tools requested: this is the final assistant answer.
+        # No tool calls means the model has produced its final answer.
         if not tool_calls:
-            return response.message.content or "No text response received."
+            return (
+                response.message.content
+                or "No text response received."
+            )
 
         for tool_call in tool_calls:
             name = tool_call.function.name
@@ -247,7 +326,7 @@ def ask_assistant(user_text: str) -> str:
 
             print(f"[Tool result: {result}]")
 
-            # Return the result to the model so it can continue.
+            # Send the actual Python tool result back to Qwen.
             messages.append(
                 {
                     "role": "tool",
@@ -261,6 +340,10 @@ def ask_assistant(user_text: str) -> str:
         "a final answer. Please try a simpler request."
     )
 
+
+# -----------------------------
+# 6. Run the assistant
+# -----------------------------
 
 def main():
     print("Day 3 Tool-Calling Assistant")
