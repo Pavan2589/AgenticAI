@@ -49,3 +49,41 @@ Thumbs.db
 # Temporary files
 tmp/
 temp/
+
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Generated outputs
+output/
+**/output/
+*.json
+
+# Sample documents (keep source code, not test PDFs)
+**/documents/*
+!**/documents/.gitkeep
+
+# Model files
+*.gguf
+*.onnx
+*.pt
+*.pth
+
+# Logs
+*.log
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
