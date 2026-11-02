@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: day9_pgvector
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: agentic_ai
+      POSTGRES_USER: pavan
+      POSTGRES_PASSWORD: day9password
+    ports:
+      - "5433:5432"
+    volumes:
+      - day9_pgdata:/var/lib/postgresql/data
+
+volumes:
+  day9_pgdata:

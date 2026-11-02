@@ -3,7 +3,7 @@ venv/
 .venv/
 env/
 
-# Python cache files
+# Python cache
 __pycache__/
 *.py[cod]
 *$py.class
@@ -13,15 +13,15 @@ __pycache__/
 .env.*
 !.env.example
 
-# Jupyter Notebook checkpoints
+# Jupyter checkpoints
 .ipynb_checkpoints/
 
-# Test and coverage files
+# Testing and coverage
 .pytest_cache/
 .coverage
 htmlcov/
 
-# Build and distribution files
+# Build and distribution
 build/
 dist/
 *.egg-info/
@@ -50,40 +50,10 @@ Thumbs.db
 tmp/
 temp/
 
-# Python virtual environments
-venv/
-.venv/
-env/
-
-# Python cache
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Environment variables and secrets
-.env
-.env.*
-!.env.example
-
 # Generated outputs
 output/
 **/output/
-*.json
 
-# Sample documents (keep source code, not test PDFs)
+# Sample documents
 **/documents/*
 !**/documents/.gitkeep
-
-# Model files
-*.gguf
-*.onnx
-*.pt
-*.pth
-
-# Logs
-*.log
-
-# IDE and OS files
-.vscode/
-.idea/
-.DS_Store
