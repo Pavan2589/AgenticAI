@@ -149,7 +149,7 @@ Create a `.env` file:
 DB_HOST=localhost
 DB_PORT=5433
 DB_NAME=agentic_ai
-DB_USER=pavan
+DB_USER=your_name
 DB_PASSWORD=your_password
 
 OLLAMA_URL=http://localhost:11434
