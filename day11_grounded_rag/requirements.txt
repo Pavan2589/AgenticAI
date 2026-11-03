@@ -1,0 +1,4 @@
+psycopg[binary]
+pgvector
+python-dotenv
+requests
