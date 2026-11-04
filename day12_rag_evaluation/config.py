@@ -1,0 +1,50 @@
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Database
+DB_HOST = os.getenv("DB_HOST", "localhost")
+DB_PORT = int(os.getenv("DB_PORT", "5433"))
+DB_NAME = os.getenv("DB_NAME", "agentic_ai")
+DB_USER = os.getenv("DB_USER", "pavan")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "day9password")
+
+# Ollama
+OLLAMA_URL = os.getenv(
+    "OLLAMA_URL",
+    "http://localhost:11434"
+)
+
+EMBEDDING_MODEL = os.getenv(
+    "EMBEDDING_MODEL",
+    "nomic-embed-text"
+)
+
+LLM_MODEL = os.getenv(
+    "LLM_MODEL",
+    "qwen3:4b"
+)
+
+EMBEDDING_DIMENSION = 768
+
+# Experiment configurations
+CONFIGURATIONS = {
+    "A": {
+        "name": "baseline",
+        "top_k": 5
+    },
+    "B": {
+        "name": "top_k_10",
+        "top_k": 10
+    }
+}
+
+# Evaluation
+DATASET_PATH = "dataset/golden_dataset.json"
+RESULTS_DIR = "results"
+
+MIN_SIMILARITY = float(
+    os.getenv("MIN_SIMILARITY", "0.25")
+)

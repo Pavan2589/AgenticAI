@@ -1,0 +1,848 @@
+{
+    "experiment": "Day 12 RAG Retrieval Evaluation",
+    "timestamp": "2026-11-04T05:50:00.802113+00:00",
+    "results": {
+        "A": {
+            "configuration": "A",
+            "settings": {
+                "name": "baseline",
+                "top_k": 5
+            },
+            "summary": {
+                "evaluated_queries": 3,
+                "precision_at_k": 0.2,
+                "recall_at_k": 0.8333,
+                "mrr": 0.7778
+            },
+            "queries": [
+                {
+                    "id": "q1",
+                    "question": "What is Quantum Key Distribution (QKD), and why is it used?",
+                    "expected_chunk_ids": [
+                        1536
+                    ],
+                    "retrieved_chunks": [
+                        {
+                            "id": 1568,
+                            "source": "sample4.pdf",
+                            "page_number": 3,
+                            "similarity": 0.8057910950256009,
+                            "content": "[27] designed a three-stage heuristic algorithm, which\nintegrates quantum the key pool to distribute sufﬁcient secret\nkeys efﬁciently in resource-constrained wavelength-division\nmultiplexing network. For QKD network operation, QKD-as-a-\nService (QaaS) [28] is suggested to enhance cybersecurity and\nachieve greater cost productivity in SDN control, IoT, virtual\nnetwork and so on. To mitigate the discrepancy between the\nlimited key production capacity and the variable needs for keys\nin quantum secure communication, the implementation of high-\nperforming distribution strategies for QKD resources is deemed\nessential. In [42], a reinforcement learning method based on\nQK pooling threshold is presented to manage key resources and\ndynamic key services, which effectively reduces the rate of burst\nbusiness congestion."
+                        },
+                        {
+                            "id": 2023,
+                            "source": "sample4.pdf",
+                            "page_number": 16,
+                            "similarity": 0.799644136365201,
+                            "content": "Zhang, “Time-scheduled quantum\nkey distribution (QKD) over WDM networks,” J."
+                        },
+                        {
+                            "id": 1536,
+                            "source": "sample4.pdf",
+                            "page_number": 2,
+                            "similarity": 0.7859953748579662,
+                            "content": "Some existing algorithms like Shor’s algorithm can\nefﬁciently factor large integers and solve discrete logarithm\nproblems, which renders traditional key distribution schemes\nvulnerable to attacks [13]. Fortunately, quantum key distribu-\ntion (QKD) [14] provides a viable solution to the paradigm of\ncreating secure and reliable key distribution between EDs and\nvehicles by utilizing the Heisenberg’s uncertainty principle [15]\nand the quantum no-cloning theorem [16]. To make full use of\nquantum technology for secure communications, the Quantum\nInternet (QI) is created [17], which consists of a combination of\nclassic communication channels and quantum signalling trans-\nmissions to deliver long-term privacy preservation and meet\nthe information-theoretic security (ITS) requirement for the\ntransmission of sensitive data."
+                        },
+                        {
+                            "id": 1602,
+                            "source": "sample4.pdf",
+                            "page_number": 5,
+                            "similarity": 0.7842419614936105,
+                            "content": "QKD Network Module\nIn the QKD network, the type of the trusted repeater QKD\nnetwork we adopt is a backbone or metro network, both of\nwhich are discussed in [45]. Here, this paper adopts the existing\nquantum communication technology as a premise, assuming\nthat the generation, modulation and distribution of quantum\nsignals can be realized through a mature QKD system."
+                        },
+                        {
+                            "id": 1971,
+                            "source": "sample4.pdf",
+                            "page_number": 16,
+                            "similarity": 0.7763976980441033,
+                            "content": "Kaewpuang et al., “Cooperative resource management in quantum key\ndistribution (QKD) networks for semantic communication,” IEEE Internet\nThings J., vol."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": 0.2,
+                        "recall_at_k": 1.0,
+                        "reciprocal_rank": 0.3333333333333333,
+                        "relevant_chunks": 1,
+                        "retrieved_chunks": 5
+                    }
+                },
+                {
+                    "id": "q2",
+                    "question": "How does the Proof-of-QK Stake consensus mechanism work?",
+                    "expected_chunk_ids": [
+                        1633
+                    ],
+                    "retrieved_chunks": [
+                        {
+                            "id": 1633,
+                            "source": "sample4.pdf",
+                            "page_number": 7,
+                            "similarity": 0.7969164964781337,
+                            "content": "In the consensus process, we propose a PoQKS algorithm\nbased on QK stakes to reach consensus, which means the more\nQKs a node has, the more it communicates with vehicles and\ntherefore should have a greater decision weight. In this consen-\nsus, the node obtains more QK stakes by completing ofﬂoading\ntasks, uses these stakes to perform weight calculations, and then\nparticipates in the consensus decision-making of the network,\nas detailed in Algorithm 1. Assume that there are |W| nodes\ncompeting for votes and the number of QKs possessed by a\nnode w is nq\nw(ε). Then, the propagation time is given by\ntc\nb(ε) = nq\nw(ε)cq(ε) +\nmax\ni̸=w,i∈W\nsv(ε)\nBw,i(ε)\n(19)\nwhere W ⊆E, cq(ε) is the delay required to compute the weight\nof a unit key at the time slot ε, and sv(ε) means the data size\nAlgorithm 1: Proof-of-QK Stake (PoQKS) Consensus\nMechanism. of voting information at the time slot ε."
+                        },
+                        {
+                            "id": 1599,
+                            "source": "sample4.pdf",
+                            "page_number": 5,
+                            "similarity": 0.7080368077645391,
+                            "content": "Records of key generation, storage, and update processes\nin the QKD network, along with ofﬂoaded computational tasks\nfromvehicles intheVECnetwork, aretreatedas ’transactions’ in\nthe blockchain system. Once these transactions are packed into\na block, they are veriﬁed by other full nodes and uploaded to the\nblockchain using the proposed PoQKS consensus mechanism."
+                        },
+                        {
+                            "id": 1543,
+                            "source": "sample4.pdf",
+                            "page_number": 2,
+                            "similarity": 0.7068572429759838,
+                            "content": "For QI-enhanced VEC, we explore quantum\nfeatures to develop a QK stake-based consensus mechanism\nto operate the blockchain system fairly. This method allows\nQKs to fully function, which saves the issue of needing to\nconsume a lot of energy for mining in traditional blockchain\nsystems. Inspired by quantum computing and tensor network\n(TN), a TN preprocessing-based quantum reinforcement learn-\ning (TN-QDRL) algorithm is designed to tackle this highly\ncompute-complex problem."
+                        },
+                        {
+                            "id": 1971,
+                            "source": "sample4.pdf",
+                            "page_number": 16,
+                            "similarity": 0.6919400691986871,
+                            "content": "Kaewpuang et al., “Cooperative resource management in quantum key\ndistribution (QKD) networks for semantic communication,” IEEE Internet\nThings J., vol."
+                        },
+                        {
+                            "id": 1547,
+                            "source": "sample4.pdf",
+                            "page_number": 3,
+                            "similarity": 0.6735842817797915,
+                            "content": "ZHANG et al.: VARIATIONAL QUANTUM REINFORCEMENT LEARNING FOR JOINT RESOURCE ALLOCATION\n15833\nIn this paper, the main contributions of our paper are presented\nas follows:\n1) We propose a novel blockchain-based VEC architecture\nwith QI, named QIB-VEC. The designed system can sup-\nport automatic adjustment of the KGR in QKD nodes, ﬂex-\nible ofﬂoading decision-making and adaptive computation\nallocation in EDs, which also ensures communication\nsecurity, computational security, and data integrity, re-\nspectively, against being breached by quantum computers\nin the post-quantum era. 2) We develop a proof-of-QK stake (PoQKS) consensus\nmechanism, which utilizes the number of QKs held by\nnodes to safeguard the impartiality of the network. New\nrecords of task ofﬂoads, computational processes, and QK\nchanges are uploaded to the blockchain and are regulated\nand audited."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": 0.2,
+                        "recall_at_k": 1.0,
+                        "reciprocal_rank": 1.0,
+                        "relevant_chunks": 1,
+                        "retrieved_chunks": 5
+                    }
+                },
+                {
+                    "id": "q3",
+                    "question": "What is the role of blockchain in the proposed framework?",
+                    "expected_chunk_ids": [],
+                    "retrieved_chunks": [
+                        {
+                            "id": 2010,
+                            "source": "sample4.pdf",
+                            "page_number": 16,
+                            "similarity": 0.646349191665654,
+                            "content": "Wang, “Blockchain\nchallenges and opportunities: A survey,” Int."
+                        },
+                        {
+                            "id": 1725,
+                            "source": "sample4.pdf",
+                            "page_number": 13,
+                            "similarity": 0.6439731312982253,
+                            "content": "Blockchain parameters,\nincluding sb and tg\nb, are chosen to reﬂect typical blockchain\nprocessing capabilities."
+                        },
+                        {
+                            "id": 1796,
+                            "source": "sample4.pdf",
+                            "page_number": 15,
+                            "similarity": 0.6429386330526731,
+                            "content": "Synergistic Effect\nThe strength of our system is that the combination of quantum\ncomputing and blockchain technology creates a mutually rein-\nforcing system. quantum computing improves the efﬁciency of\nresource allocation by reducing computational overhead, while\nblockchain guarantees the security and integrity of the process. Speciﬁcally, quantum computing enables real-time optimiza-\ntion, and blockchain ensures that these optimizations are tamper-\nproof and auditable, creating a robust and scalable solution for\nVEC."
+                        },
+                        {
+                            "id": 1630,
+                            "source": "sample4.pdf",
+                            "page_number": 7,
+                            "similarity": 0.6426327058514707,
+                            "content": "Trust Blockchain Module\nBy ofﬂoading parking and charging tasks to the ED, vehi-\ncles can have better computing experiences. Although quantum\ncommunication ensures secure communication, the process of\ncomputing in the ED also carries the risk of privacy leakage. The integration of blockchain in QIB-VEC can improve security\nand privacy protection. The ED is selected based on the number\nof QKs to prevent malicious data misuse, since it has enough\nresources to act as a blockchain node. In addition, transaction\nrecords within the system are handled by the blockchain, in-\ncluding generating blocks and validating transactions through a\nconsensus process. During block generation phase, suppose the wth ED is used\nas a node to produce the blockchain. Denote the CPU-cycle\nfrequency assigned to produce blocks and processing density as\ncb\nm (in cycles/s) and ρb (in cycles/bit)."
+                        },
+                        {
+                            "id": 1542,
+                            "source": "sample4.pdf",
+                            "page_number": 2,
+                            "similarity": 0.6384972815223792,
+                            "content": "To address above-mentioned unresolved issues, We examine\nthe joint RA problem to optimize key generation rate (KGR),\nenergy consumption and transmission delay for QI and VEC-\nbased system with blockchain technology. Blockchain tech-\nnology [25] is an innovative-distributed ledger technology that\nenables secure and transparent recording of transactions and data\nacross multiple computers. Its core features are decentraliza-\ntion, immutability and cryptographic security, which form the\nblockchain’s infrastructure and operating mechanism together. With the support of blockchain, it is possible to address security\nissues at the computational level, protect the privacy and in-\ntegrity of data, and improve the process of auditing the system. While there are studies on the RA problem for blockchain-\nbased VEC [26], the threat of quantum computers has not\nbeen considered."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": null,
+                        "recall_at_k": null,
+                        "reciprocal_rank": null,
+                        "relevant_chunks": 0,
+                        "retrieved_chunks": 5
+                    }
+                },
+                {
+                    "id": "q4",
+                    "question": "What is the exact computational complexity of the proposed algorithm?",
+                    "expected_chunk_ids": [
+                        1701,
+                        1702
+                    ],
+                    "retrieved_chunks": [
+                        {
+                            "id": 1701,
+                            "source": "sample4.pdf",
+                            "page_number": 11,
+                            "similarity": 0.7727033495903235,
+                            "content": "Algorithm Analysis\n1) Computational Complexity: The computational complex-\nity of TN-QDRL arises from two primary components: TN\npreprocessing and QDRL execution. First, the computational\ncomplexity of MPS depends on j, χ, and ℧. During MPS\nconstruction, for j matrices, each of size ℧× χ × χ (internal)\nor ℧× χ (boundary), the complexity is O(j · χ2 · ℧). In MPS\ntraining, iterative optimization per iteration has complexity:\nO(j · χ3 · ℧). While j may be large in real-time trafﬁc scenarios,\nthe bond dimension χ can be tuned to balance expressiveness\nand computational cost. Then, the complexity of the QDRL component is derived from\nthe VQC and Grover search algorithm. With a circuit depth d and\nn qubits, the forward pass complexity is O(d · n). For an action\nspace of size N = 2β, the number of iterations τ = O(\n√\nN) =\nO(2β/2), with each iteration involving O(β) quantum gates,\nproduces a total complexity of O(β · 2β/2)."
+                        },
+                        {
+                            "id": 1715,
+                            "source": "sample4.pdf",
+                            "page_number": 12,
+                            "similarity": 0.7067677831288209,
+                            "content": "Then,\nGrover’s algorithmhas acomplexityof O(β · 2β/2). For β = 20,\nthis results in approximately 2 · 104 gates, requiring a total of\n0.2 to 2 milliseconds. At last, measuring n + β qubits and\ndecoding takes about 1∼2 milliseconds. Therefore, the total\nlatency is about 5∼10 milliseconds in large-scale scenarios,\nwhich satisﬁes the real-time demand."
+                        },
+                        {
+                            "id": 1692,
+                            "source": "sample4.pdf",
+                            "page_number": 11,
+                            "similarity": 0.7065677257349664,
+                            "content": "Grover’s Search Algorithm\nGrover’ssearchalgorithmisasigniﬁcantalgorithmintheﬁeld\nof quantum computing. It is particularly effective at solving the\nproblem of searching an unsorted database. While a classical\ncomputer requires O(N) time complexity to ﬁnd a speciﬁc\nelement in an unsorted database, this algorithm reduces the\ntime complexity to O(\n√\nN)."
+                        },
+                        {
+                            "id": 1699,
+                            "source": "sample4.pdf",
+                            "page_number": 11,
+                            "similarity": 0.6882191076017539,
+                            "content": "For\na complete practical application and theoretical underpinnings,\nthe detailed breakdown is presented in Algorithm 2."
+                        },
+                        {
+                            "id": 1647,
+                            "source": "sample4.pdf",
+                            "page_number": 8,
+                            "similarity": 0.6740142884220389,
+                            "content": "Each additional vehicle or node represents an exponential\nincrease in computational complexity, which produces the curse\nof dimensionality. Thus, this is a NP-hard problem. To make\nthe solution more efﬁcient, we design a TN-QDRL algorithm to\nsolve this practical dynamic problem."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": 0.2,
+                        "recall_at_k": 0.5,
+                        "reciprocal_rank": 1.0,
+                        "relevant_chunks": 1,
+                        "retrieved_chunks": 5
+                    }
+                },
+                {
+                    "id": "q5",
+                    "question": "What is the population of Chennai?",
+                    "expected_chunk_ids": [],
+                    "retrieved_chunks": [
+                        {
+                            "id": 2281,
+                            "source": "sample2.pdf",
+                            "page_number": 1,
+                            "similarity": 0.5134244013158654,
+                            "content": "Shaw India (DESIS) is a core member of DESCO’s Global Information\nTechnology Group and was established in Hyderabad in 1996. DESIS provides research, development, and support\nfor all of D."
+                        },
+                        {
+                            "id": 1182,
+                            "source": "sample3.pdf",
+                            "page_number": 15,
+                            "similarity": 0.5069345554514619,
+                            "content": "Surveys Tuts., vol."
+                        },
+                        {
+                            "id": 1049,
+                            "source": "sample3.pdf",
+                            "page_number": 15,
+                            "similarity": 0.5069345554514619,
+                            "content": "Surveys Tuts., vol."
+                        },
+                        {
+                            "id": 1193,
+                            "source": "sample3.pdf",
+                            "page_number": 15,
+                            "similarity": 0.5069345554514619,
+                            "content": "Surveys Tuts., vol."
+                        },
+                        {
+                            "id": 2164,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.5069345554514619,
+                            "content": "Surveys\nTuts., vol."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": null,
+                        "recall_at_k": null,
+                        "reciprocal_rank": null,
+                        "relevant_chunks": 0,
+                        "retrieved_chunks": 5
+                    }
+                },
+                {
+                    "id": "q6",
+                    "question": "What is the author's personal phone number?",
+                    "expected_chunk_ids": [],
+                    "retrieved_chunks": [
+                        {
+                            "id": 2268,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.5955833146250058,
+                            "content": "He\nis the author of four books and more than 80 articles. His research interests include industrial Internet of Things and applications,\ndigital transformation and innovation, information systems strategy, quality\nmanagement, and healthcare service management. He is the Managing Editor\nof the Journal Enterprise Information Systems, and an Associate Editor for the\nJournal of Global Information Management and Journal of Organizational and\nEnd User Computing."
+                        },
+                        {
+                            "id": 2263,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.5655711058720333,
+                            "content": "She has authored or\ncoauthored more than 130 articles in various international journals and seminars. Her research interests include logistics and supply chain management, industrial\nInternet of Things, cyber-physical systems, data analytics, and swam intelligence\noptimization."
+                        },
+                        {
+                            "id": 1520,
+                            "source": "sample4.pdf",
+                            "page_number": 1,
+                            "similarity": 0.5642670239766229,
+                            "content": "(Corresponding author: Yung Po Tsang.)\nKening Zhang, Carman K."
+                        },
+                        {
+                            "id": 1448,
+                            "source": "sample1.pdf",
+                            "page_number": 7,
+                            "similarity": 0.555161837156699,
+                            "content": "Cluster Computing,\n27(7), 8965-8982."
+                        },
+                        {
+                            "id": 975,
+                            "source": "sample3.pdf",
+                            "page_number": 15,
+                            "similarity": 0.5506226463807775,
+                            "content": "Shabtai, “Kitsune: An\nensemble of autoencoders for online network intrusion detection,”\n2018, arXiv:1802.09089."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": null,
+                        "recall_at_k": null,
+                        "reciprocal_rank": null,
+                        "relevant_chunks": 0,
+                        "retrieved_chunks": 5
+                    }
+                }
+            ]
+        },
+        "B": {
+            "configuration": "B",
+            "settings": {
+                "name": "top_k_10",
+                "top_k": 10
+            },
+            "summary": {
+                "evaluated_queries": 3,
+                "precision_at_k": 0.1333,
+                "recall_at_k": 1.0,
+                "mrr": 0.7778
+            },
+            "queries": [
+                {
+                    "id": "q1",
+                    "question": "What is Quantum Key Distribution (QKD), and why is it used?",
+                    "expected_chunk_ids": [
+                        1536
+                    ],
+                    "retrieved_chunks": [
+                        {
+                            "id": 1568,
+                            "source": "sample4.pdf",
+                            "page_number": 3,
+                            "similarity": 0.8057910950256009,
+                            "content": "[27] designed a three-stage heuristic algorithm, which\nintegrates quantum the key pool to distribute sufﬁcient secret\nkeys efﬁciently in resource-constrained wavelength-division\nmultiplexing network. For QKD network operation, QKD-as-a-\nService (QaaS) [28] is suggested to enhance cybersecurity and\nachieve greater cost productivity in SDN control, IoT, virtual\nnetwork and so on. To mitigate the discrepancy between the\nlimited key production capacity and the variable needs for keys\nin quantum secure communication, the implementation of high-\nperforming distribution strategies for QKD resources is deemed\nessential. In [42], a reinforcement learning method based on\nQK pooling threshold is presented to manage key resources and\ndynamic key services, which effectively reduces the rate of burst\nbusiness congestion."
+                        },
+                        {
+                            "id": 2023,
+                            "source": "sample4.pdf",
+                            "page_number": 16,
+                            "similarity": 0.799644136365201,
+                            "content": "Zhang, “Time-scheduled quantum\nkey distribution (QKD) over WDM networks,” J."
+                        },
+                        {
+                            "id": 1536,
+                            "source": "sample4.pdf",
+                            "page_number": 2,
+                            "similarity": 0.7859953748579662,
+                            "content": "Some existing algorithms like Shor’s algorithm can\nefﬁciently factor large integers and solve discrete logarithm\nproblems, which renders traditional key distribution schemes\nvulnerable to attacks [13]. Fortunately, quantum key distribu-\ntion (QKD) [14] provides a viable solution to the paradigm of\ncreating secure and reliable key distribution between EDs and\nvehicles by utilizing the Heisenberg’s uncertainty principle [15]\nand the quantum no-cloning theorem [16]. To make full use of\nquantum technology for secure communications, the Quantum\nInternet (QI) is created [17], which consists of a combination of\nclassic communication channels and quantum signalling trans-\nmissions to deliver long-term privacy preservation and meet\nthe information-theoretic security (ITS) requirement for the\ntransmission of sensitive data."
+                        },
+                        {
+                            "id": 1602,
+                            "source": "sample4.pdf",
+                            "page_number": 5,
+                            "similarity": 0.7842419614936105,
+                            "content": "QKD Network Module\nIn the QKD network, the type of the trusted repeater QKD\nnetwork we adopt is a backbone or metro network, both of\nwhich are discussed in [45]. Here, this paper adopts the existing\nquantum communication technology as a premise, assuming\nthat the generation, modulation and distribution of quantum\nsignals can be realized through a mature QKD system."
+                        },
+                        {
+                            "id": 1971,
+                            "source": "sample4.pdf",
+                            "page_number": 16,
+                            "similarity": 0.7763976980441033,
+                            "content": "Kaewpuang et al., “Cooperative resource management in quantum key\ndistribution (QKD) networks for semantic communication,” IEEE Internet\nThings J., vol."
+                        },
+                        {
+                            "id": 1537,
+                            "source": "sample4.pdf",
+                            "page_number": 2,
+                            "similarity": 0.7689354419708306,
+                            "content": "Although existing research has\nfocused on the RA in QKD [18], [19], there are still some\nproblems. Firstly, while the RA problem of QKD in QI has been rec-\nognized, deploying secure quantum communication in VEC\nremains underexplored [20], [21]. Generating, storing, and dis-\ntributing quantum keys (QKs) in dynamic scenarios, while\noptimizing transmission delay and computation assignment, is\nchallenging."
+                        },
+                        {
+                            "id": 2174,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.7458495184837262,
+                            "content": "Pan, “Large scale\nquantum key distribution: Challenges and solutions,” Opt."
+                        },
+                        {
+                            "id": 1728,
+                            "source": "sample4.pdf",
+                            "page_number": 13,
+                            "similarity": 0.7410096063035035,
+                            "content": "This scheme evaluates the performance differences\nbetween traditional and quantum-enhanced techniques,\nparticularly in terms of convergence speed, resource ef-\nﬁciency, and adaptability in dynamic VEC environments. 4) RANQKD (RA scheme without QKD) [55]: This scheme\nremoves QKD from the RA process, resulting in a system\nwithout secure quantum communication. By disregard-\ning quantum key resources for encryption, the scheme\nassesses the importance of QKD in ensuring secure and\nreliable communication, as well as its impact on system\nperformance and RA efﬁciency. 5) RAFBZ (RA scheme with the ﬁxed block size) [56]: In this\nscheme, resources are allocated in predetermined, ﬁxed-\nsized blocks regardless of the speciﬁc needs of individual\ntasks. This static allocation strategy ignores the dynamic\ncharacteristics of vehicular applications, such as varying\ntask sizes and deadlines."
+                        },
+                        {
+                            "id": 1564,
+                            "source": "sample4.pdf",
+                            "page_number": 3,
+                            "similarity": 0.7338338691491917,
+                            "content": "Quantum Internet\nQI [17] contains a combination of classical channels and\nquantum secure channels, which is the main technology for\nsecure transmission of private information among in the post-\nquantum era. As a mature technology in the QI, QKD is al-\nready available for industrial and commercial applications [18]. In terms of QKD deployment, a satellite-based QKD net-\nwork has completely undergone experimental conﬁrmation [40]. There are also multiple ﬁber-based connection like Beijing-\nShanghai, SwissQuantum, SECOQC and Tokyo QKD networks\nthat have even been effectively implemented. In the manage-\nment of QKD networks, software-deﬁned networking (SDN)\ncan provide a more functional approach to programmable\nmanagement."
+                        },
+                        {
+                            "id": 2180,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.7297664349297039,
+                            "content": "Renner, “Security of quantum key distribution,” Int."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": 0.1,
+                        "recall_at_k": 1.0,
+                        "reciprocal_rank": 0.3333333333333333,
+                        "relevant_chunks": 1,
+                        "retrieved_chunks": 10
+                    }
+                },
+                {
+                    "id": "q2",
+                    "question": "How does the Proof-of-QK Stake consensus mechanism work?",
+                    "expected_chunk_ids": [
+                        1633
+                    ],
+                    "retrieved_chunks": [
+                        {
+                            "id": 1633,
+                            "source": "sample4.pdf",
+                            "page_number": 7,
+                            "similarity": 0.7969164964781337,
+                            "content": "In the consensus process, we propose a PoQKS algorithm\nbased on QK stakes to reach consensus, which means the more\nQKs a node has, the more it communicates with vehicles and\ntherefore should have a greater decision weight. In this consen-\nsus, the node obtains more QK stakes by completing ofﬂoading\ntasks, uses these stakes to perform weight calculations, and then\nparticipates in the consensus decision-making of the network,\nas detailed in Algorithm 1. Assume that there are |W| nodes\ncompeting for votes and the number of QKs possessed by a\nnode w is nq\nw(ε). Then, the propagation time is given by\ntc\nb(ε) = nq\nw(ε)cq(ε) +\nmax\ni̸=w,i∈W\nsv(ε)\nBw,i(ε)\n(19)\nwhere W ⊆E, cq(ε) is the delay required to compute the weight\nof a unit key at the time slot ε, and sv(ε) means the data size\nAlgorithm 1: Proof-of-QK Stake (PoQKS) Consensus\nMechanism. of voting information at the time slot ε."
+                        },
+                        {
+                            "id": 1599,
+                            "source": "sample4.pdf",
+                            "page_number": 5,
+                            "similarity": 0.7080368077645391,
+                            "content": "Records of key generation, storage, and update processes\nin the QKD network, along with ofﬂoaded computational tasks\nfromvehicles intheVECnetwork, aretreatedas ’transactions’ in\nthe blockchain system. Once these transactions are packed into\na block, they are veriﬁed by other full nodes and uploaded to the\nblockchain using the proposed PoQKS consensus mechanism."
+                        },
+                        {
+                            "id": 1543,
+                            "source": "sample4.pdf",
+                            "page_number": 2,
+                            "similarity": 0.7068572429759838,
+                            "content": "For QI-enhanced VEC, we explore quantum\nfeatures to develop a QK stake-based consensus mechanism\nto operate the blockchain system fairly. This method allows\nQKs to fully function, which saves the issue of needing to\nconsume a lot of energy for mining in traditional blockchain\nsystems. Inspired by quantum computing and tensor network\n(TN), a TN preprocessing-based quantum reinforcement learn-\ning (TN-QDRL) algorithm is designed to tackle this highly\ncompute-complex problem."
+                        },
+                        {
+                            "id": 1971,
+                            "source": "sample4.pdf",
+                            "page_number": 16,
+                            "similarity": 0.6919400691986871,
+                            "content": "Kaewpuang et al., “Cooperative resource management in quantum key\ndistribution (QKD) networks for semantic communication,” IEEE Internet\nThings J., vol."
+                        },
+                        {
+                            "id": 1547,
+                            "source": "sample4.pdf",
+                            "page_number": 3,
+                            "similarity": 0.6735842817797915,
+                            "content": "ZHANG et al.: VARIATIONAL QUANTUM REINFORCEMENT LEARNING FOR JOINT RESOURCE ALLOCATION\n15833\nIn this paper, the main contributions of our paper are presented\nas follows:\n1) We propose a novel blockchain-based VEC architecture\nwith QI, named QIB-VEC. The designed system can sup-\nport automatic adjustment of the KGR in QKD nodes, ﬂex-\nible ofﬂoading decision-making and adaptive computation\nallocation in EDs, which also ensures communication\nsecurity, computational security, and data integrity, re-\nspectively, against being breached by quantum computers\nin the post-quantum era. 2) We develop a proof-of-QK stake (PoQKS) consensus\nmechanism, which utilizes the number of QKs held by\nnodes to safeguard the impartiality of the network. New\nrecords of task ofﬂoads, computational processes, and QK\nchanges are uploaded to the blockchain and are regulated\nand audited."
+                        },
+                        {
+                            "id": 1568,
+                            "source": "sample4.pdf",
+                            "page_number": 3,
+                            "similarity": 0.6478985304592193,
+                            "content": "[27] designed a three-stage heuristic algorithm, which\nintegrates quantum the key pool to distribute sufﬁcient secret\nkeys efﬁciently in resource-constrained wavelength-division\nmultiplexing network. For QKD network operation, QKD-as-a-\nService (QaaS) [28] is suggested to enhance cybersecurity and\nachieve greater cost productivity in SDN control, IoT, virtual\nnetwork and so on. To mitigate the discrepancy between the\nlimited key production capacity and the variable needs for keys\nin quantum secure communication, the implementation of high-\nperforming distribution strategies for QKD resources is deemed\nessential. In [42], a reinforcement learning method based on\nQK pooling threshold is presented to manage key resources and\ndynamic key services, which effectively reduces the rate of burst\nbusiness congestion."
+                        },
+                        {
+                            "id": 2163,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.6472430580243475,
+                            "content": "Hou, “A survey of distributed\nconsensus protocols for blockchain networks,” IEEE Commun."
+                        },
+                        {
+                            "id": 1539,
+                            "source": "sample4.pdf",
+                            "page_number": 2,
+                            "similarity": 0.6459839766045058,
+                            "content": "Although the quantum deep\nreinforcement learning (QDRL) algorithm holds promise for\naddressing this compute-intensive problem, its use in large-\ndimensional environments is limited by the few quantum bits\navailable in current noisy intermediate-scale quantum (NISQ)\ndevices [22], [23], [24]. Additionally, QKD ensures secure\ncommunication but does not protect ofﬂoading tasks in VEC,\nleaving data vulnerable to tampering or leaks. Ensuring data\nintegrity in edge devices (EDs) and maintaining audit trails\nfor data and QKs access are also crucial but overlooked in\nprevious studies."
+                        },
+                        {
+                            "id": 1597,
+                            "source": "sample4.pdf",
+                            "page_number": 5,
+                            "similarity": 0.6392683269774041,
+                            "content": "ZHANG et al.: VARIATIONAL QUANTUM REINFORCEMENT LEARNING FOR JOINT RESOURCE ALLOCATION\n15835\nthe QKD equipment layer (QL), and the edge and blockchain\nlayer (EBL). In this setup, QKD and blockchain secure network\ncommunications and computation ofﬂoading while ensuring\nsystem auditability. The QKD network dynamically allocates\nresources based on real-time feedback from EBL and IL to\nimprove the key generation rate (KGR). During this process,\nquantum signals are produced by exploiting quantum optical\nprocesses and distributed through optical ﬁbers. In the EBL, an\nedge device (ED), a QKD equipment, and a vehicle crowdsourc-\ning platform (VCP) are deployed around each RSU. EDs serve\nas full blockchain nodes, meeting the computation and mining\nrequirements due to their ample resources. Quantum simulators\nin EDs execute quantum algorithms to accelerate neural network\nconvergence."
+                        },
+                        {
+                            "id": 1601,
+                            "source": "sample4.pdf",
+                            "page_number": 5,
+                            "similarity": 0.6385501242548709,
+                            "content": "A1) The Beer-Lambert law [43] governs signal attenuation\nin optical ﬁbers, with channel length directly impacting\nentanglement pair generation. A2) The temperature-dependent detector efﬁciency follows\nsemiconductor physics principles. A3) The noise function adopts a frequency-domain ap-\nproach, incorporating photon scattering/absorption and\noscillatory components. A4) The quality and coherence of recent quantum devices\nare sufﬁcient to efﬁciently perform operations such as\nsuperposition, Grover searches and quantum state en-\ncoding. A5) The number of QKs is used as a node’s equity metric, the\nmore QKs a node has the more secure it is and the more\nweight it has in decision-making in the network based\non the theory of blockchain consensus mechanism [44]. B."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": 0.1,
+                        "recall_at_k": 1.0,
+                        "reciprocal_rank": 1.0,
+                        "relevant_chunks": 1,
+                        "retrieved_chunks": 10
+                    }
+                },
+                {
+                    "id": "q3",
+                    "question": "What is the role of blockchain in the proposed framework?",
+                    "expected_chunk_ids": [],
+                    "retrieved_chunks": [
+                        {
+                            "id": 2010,
+                            "source": "sample4.pdf",
+                            "page_number": 16,
+                            "similarity": 0.646349191665654,
+                            "content": "Wang, “Blockchain\nchallenges and opportunities: A survey,” Int."
+                        },
+                        {
+                            "id": 1725,
+                            "source": "sample4.pdf",
+                            "page_number": 13,
+                            "similarity": 0.6439731312982253,
+                            "content": "Blockchain parameters,\nincluding sb and tg\nb, are chosen to reﬂect typical blockchain\nprocessing capabilities."
+                        },
+                        {
+                            "id": 1796,
+                            "source": "sample4.pdf",
+                            "page_number": 15,
+                            "similarity": 0.6429386330526731,
+                            "content": "Synergistic Effect\nThe strength of our system is that the combination of quantum\ncomputing and blockchain technology creates a mutually rein-\nforcing system. quantum computing improves the efﬁciency of\nresource allocation by reducing computational overhead, while\nblockchain guarantees the security and integrity of the process. Speciﬁcally, quantum computing enables real-time optimiza-\ntion, and blockchain ensures that these optimizations are tamper-\nproof and auditable, creating a robust and scalable solution for\nVEC."
+                        },
+                        {
+                            "id": 1630,
+                            "source": "sample4.pdf",
+                            "page_number": 7,
+                            "similarity": 0.6426327058514707,
+                            "content": "Trust Blockchain Module\nBy ofﬂoading parking and charging tasks to the ED, vehi-\ncles can have better computing experiences. Although quantum\ncommunication ensures secure communication, the process of\ncomputing in the ED also carries the risk of privacy leakage. The integration of blockchain in QIB-VEC can improve security\nand privacy protection. The ED is selected based on the number\nof QKs to prevent malicious data misuse, since it has enough\nresources to act as a blockchain node. In addition, transaction\nrecords within the system are handled by the blockchain, in-\ncluding generating blocks and validating transactions through a\nconsensus process. During block generation phase, suppose the wth ED is used\nas a node to produce the blockchain. Denote the CPU-cycle\nfrequency assigned to produce blocks and processing density as\ncb\nm (in cycles/s) and ρb (in cycles/bit)."
+                        },
+                        {
+                            "id": 1542,
+                            "source": "sample4.pdf",
+                            "page_number": 2,
+                            "similarity": 0.6384972815223792,
+                            "content": "To address above-mentioned unresolved issues, We examine\nthe joint RA problem to optimize key generation rate (KGR),\nenergy consumption and transmission delay for QI and VEC-\nbased system with blockchain technology. Blockchain tech-\nnology [25] is an innovative-distributed ledger technology that\nenables secure and transparent recording of transactions and data\nacross multiple computers. Its core features are decentraliza-\ntion, immutability and cryptographic security, which form the\nblockchain’s infrastructure and operating mechanism together. With the support of blockchain, it is possible to address security\nissues at the computational level, protect the privacy and in-\ntegrity of data, and improve the process of auditing the system. While there are studies on the RA problem for blockchain-\nbased VEC [26], the threat of quantum computers has not\nbeen considered."
+                        },
+                        {
+                            "id": 1988,
+                            "source": "sample4.pdf",
+                            "page_number": 16,
+                            "similarity": 0.6256022526737011,
+                            "content": "Kumar, “Blockchain based\noptimized energy trading for E-mobility using quantum reinforcement\nlearning,” IEEE Trans."
+                        },
+                        {
+                            "id": 1599,
+                            "source": "sample4.pdf",
+                            "page_number": 5,
+                            "similarity": 0.6216637347145397,
+                            "content": "Records of key generation, storage, and update processes\nin the QKD network, along with ofﬂoaded computational tasks\nfromvehicles intheVECnetwork, aretreatedas ’transactions’ in\nthe blockchain system. Once these transactions are packed into\na block, they are veriﬁed by other full nodes and uploaded to the\nblockchain using the proposed PoQKS consensus mechanism."
+                        },
+                        {
+                            "id": 1645,
+                            "source": "sample4.pdf",
+                            "page_number": 8,
+                            "similarity": 0.6097421311717736,
+                            "content": "C3 and C4 ensures that the energy\nand channel gains are within a certain range of values. C5 and\nC6 represents the maximum latency tolerated by the vehicles\nin the VEC and blockchain modules. C7 indicates that ED’s\nbandwidth is allocated to connected vehicles, while C8 ensures\nthat the network is not overloaded when blockchain nodes reach\nconsensus. C9, C10, C11, and C12 represent the ofﬂoading\nstrategy of vehicles and the selection strategy of the block miner. These constraints ensure that each vehicle can only ofﬂoad tasks\nto one ED at a time, and that each block can only be generated by\none node at the same moment."
+                        },
+                        {
+                            "id": 2163,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.6038347021844609,
+                            "content": "Hou, “A survey of distributed\nconsensus protocols for blockchain networks,” IEEE Commun."
+                        },
+                        {
+                            "id": 2259,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.5986254219337136,
+                            "content": "His main research interests include blockchain,\nInternet of Things, quantum technology, and dis-\ntributed system."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": null,
+                        "recall_at_k": null,
+                        "reciprocal_rank": null,
+                        "relevant_chunks": 0,
+                        "retrieved_chunks": 10
+                    }
+                },
+                {
+                    "id": "q4",
+                    "question": "What is the exact computational complexity of the proposed algorithm?",
+                    "expected_chunk_ids": [
+                        1701,
+                        1702
+                    ],
+                    "retrieved_chunks": [
+                        {
+                            "id": 1701,
+                            "source": "sample4.pdf",
+                            "page_number": 11,
+                            "similarity": 0.7727033495903235,
+                            "content": "Algorithm Analysis\n1) Computational Complexity: The computational complex-\nity of TN-QDRL arises from two primary components: TN\npreprocessing and QDRL execution. First, the computational\ncomplexity of MPS depends on j, χ, and ℧. During MPS\nconstruction, for j matrices, each of size ℧× χ × χ (internal)\nor ℧× χ (boundary), the complexity is O(j · χ2 · ℧). In MPS\ntraining, iterative optimization per iteration has complexity:\nO(j · χ3 · ℧). While j may be large in real-time trafﬁc scenarios,\nthe bond dimension χ can be tuned to balance expressiveness\nand computational cost. Then, the complexity of the QDRL component is derived from\nthe VQC and Grover search algorithm. With a circuit depth d and\nn qubits, the forward pass complexity is O(d · n). For an action\nspace of size N = 2β, the number of iterations τ = O(\n√\nN) =\nO(2β/2), with each iteration involving O(β) quantum gates,\nproduces a total complexity of O(β · 2β/2)."
+                        },
+                        {
+                            "id": 1715,
+                            "source": "sample4.pdf",
+                            "page_number": 12,
+                            "similarity": 0.7067677831288209,
+                            "content": "Then,\nGrover’s algorithmhas acomplexityof O(β · 2β/2). For β = 20,\nthis results in approximately 2 · 104 gates, requiring a total of\n0.2 to 2 milliseconds. At last, measuring n + β qubits and\ndecoding takes about 1∼2 milliseconds. Therefore, the total\nlatency is about 5∼10 milliseconds in large-scale scenarios,\nwhich satisﬁes the real-time demand."
+                        },
+                        {
+                            "id": 1692,
+                            "source": "sample4.pdf",
+                            "page_number": 11,
+                            "similarity": 0.7065677257349664,
+                            "content": "Grover’s Search Algorithm\nGrover’ssearchalgorithmisasigniﬁcantalgorithmintheﬁeld\nof quantum computing. It is particularly effective at solving the\nproblem of searching an unsorted database. While a classical\ncomputer requires O(N) time complexity to ﬁnd a speciﬁc\nelement in an unsorted database, this algorithm reduces the\ntime complexity to O(\n√\nN)."
+                        },
+                        {
+                            "id": 1699,
+                            "source": "sample4.pdf",
+                            "page_number": 11,
+                            "similarity": 0.6882191076017539,
+                            "content": "For\na complete practical application and theoretical underpinnings,\nthe detailed breakdown is presented in Algorithm 2."
+                        },
+                        {
+                            "id": 1647,
+                            "source": "sample4.pdf",
+                            "page_number": 8,
+                            "similarity": 0.6740142884220389,
+                            "content": "Each additional vehicle or node represents an exponential\nincrease in computational complexity, which produces the curse\nof dimensionality. Thus, this is a NP-hard problem. To make\nthe solution more efﬁcient, we design a TN-QDRL algorithm to\nsolve this practical dynamic problem."
+                        },
+                        {
+                            "id": 1756,
+                            "source": "sample4.pdf",
+                            "page_number": 14,
+                            "similarity": 0.6733352128660172,
+                            "content": "computation, but the algorithm still works and can converge."
+                        },
+                        {
+                            "id": 1713,
+                            "source": "sample4.pdf",
+                            "page_number": 12,
+                            "similarity": 0.6694311504539507,
+                            "content": "3) Scalability Analysis: In large-scale real-time trafﬁc sce-\nnarios, the state and action space are generally vast. As j scales\nlinearly with the trafﬁc network size, doubling the number of\nvehicles results in j ∝Q. Adjusting χ, which is typically much\nsmaller than j, in the range of 10 to 100, has a signiﬁcant\nimpact on controlling the computational cost. Moreover, MPS\ndimensionality reduction ensures that the quantum circuit only\nprocesses ⌈log2 χ⌉qubits instead of directly handling j, greatly\nenhancing scalability. As the action space grows exponentially\nwith the scenario scale, Grover’s quadratic speed-up ensures that\ncomputational cost increases gradually. Real-time trafﬁc scenarios demand decision-making latency\non the order of milliseconds. The latency in TN-QDRL in-\ncludes classical preprocessing, quantum computation, and post-\nprocessing. In the ﬁrst part, for j = 106, χ = 50, and ℧= 2,\na single computation on a GPU takes approximately 0.1∼1\nseconds."
+                        },
+                        {
+                            "id": 1702,
+                            "source": "sample4.pdf",
+                            "page_number": 11,
+                            "similarity": 0.6684959728422288,
+                            "content": "Therefore, the total complexity of TN-QDRL is O(j · χ3 ·\n℧+ d · n + β · 2β/2). 2) Feasibility Analysis: The feasibility of deploying the TN-\nQDRL algorithm on current quantum hardware is a critical con-\nsideration, given the constraints of NISQ devices. For qubit and\nAuthorized licensed use limited to: Indian Institute of Information Technology Design & Manufacturing."
+                        },
+                        {
+                            "id": 1514,
+                            "source": "sample4.pdf",
+                            "page_number": 1,
+                            "similarity": 0.6663441458569679,
+                            "content": "Simulation results indicate that our algorithm achieves\na convergence speed that is 62.11% faster in high-dimensional\nreal-world VEC scenarios and consumes 58.19% fewer quantum\nresources compared to other benchmarks. Index Terms—Blockchain technology, Grover’s algorithm,\nquantum\nkey\ndistribution\n(QKD),\nquantum\nreinforcement\nlearning, vehicular edge computing (VEC), variational quantum\ncircuits (VQC)."
+                        },
+                        {
+                            "id": 1633,
+                            "source": "sample4.pdf",
+                            "page_number": 7,
+                            "similarity": 0.6648237900068986,
+                            "content": "In the consensus process, we propose a PoQKS algorithm\nbased on QK stakes to reach consensus, which means the more\nQKs a node has, the more it communicates with vehicles and\ntherefore should have a greater decision weight. In this consen-\nsus, the node obtains more QK stakes by completing ofﬂoading\ntasks, uses these stakes to perform weight calculations, and then\nparticipates in the consensus decision-making of the network,\nas detailed in Algorithm 1. Assume that there are |W| nodes\ncompeting for votes and the number of QKs possessed by a\nnode w is nq\nw(ε). Then, the propagation time is given by\ntc\nb(ε) = nq\nw(ε)cq(ε) +\nmax\ni̸=w,i∈W\nsv(ε)\nBw,i(ε)\n(19)\nwhere W ⊆E, cq(ε) is the delay required to compute the weight\nof a unit key at the time slot ε, and sv(ε) means the data size\nAlgorithm 1: Proof-of-QK Stake (PoQKS) Consensus\nMechanism. of voting information at the time slot ε."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": 0.2,
+                        "recall_at_k": 1.0,
+                        "reciprocal_rank": 1.0,
+                        "relevant_chunks": 2,
+                        "retrieved_chunks": 10
+                    }
+                },
+                {
+                    "id": "q5",
+                    "question": "What is the population of Chennai?",
+                    "expected_chunk_ids": [],
+                    "retrieved_chunks": [
+                        {
+                            "id": 2281,
+                            "source": "sample2.pdf",
+                            "page_number": 1,
+                            "similarity": 0.5134244013158654,
+                            "content": "Shaw India (DESIS) is a core member of DESCO’s Global Information\nTechnology Group and was established in Hyderabad in 1996. DESIS provides research, development, and support\nfor all of D."
+                        },
+                        {
+                            "id": 1182,
+                            "source": "sample3.pdf",
+                            "page_number": 15,
+                            "similarity": 0.5069345554514619,
+                            "content": "Surveys Tuts., vol."
+                        },
+                        {
+                            "id": 1193,
+                            "source": "sample3.pdf",
+                            "page_number": 15,
+                            "similarity": 0.5069345554514619,
+                            "content": "Surveys Tuts., vol."
+                        },
+                        {
+                            "id": 2164,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.5069345554514619,
+                            "content": "Surveys\nTuts., vol."
+                        },
+                        {
+                            "id": 1049,
+                            "source": "sample3.pdf",
+                            "page_number": 15,
+                            "similarity": 0.5069345554514619,
+                            "content": "Surveys Tuts., vol."
+                        },
+                        {
+                            "id": 1469,
+                            "source": "sample1.pdf",
+                            "page_number": 8,
+                            "similarity": 0.5044476975327402,
+                            "content": "[24] Padakandla, S."
+                        },
+                        {
+                            "id": 1472,
+                            "source": "sample1.pdf",
+                            "page_number": 8,
+                            "similarity": 0.5002726613987774,
+                            "content": "ACM Computing Surveys (CSUR), 54(6), 1-25."
+                        },
+                        {
+                            "id": 953,
+                            "source": "sample3.pdf",
+                            "page_number": 15,
+                            "similarity": 0.49515207039596243,
+                            "content": "Vis., Glasgow, U.K., Springer, 2020, pp."
+                        },
+                        {
+                            "id": 1766,
+                            "source": "sample4.pdf",
+                            "page_number": 14,
+                            "similarity": 0.4923405638147107,
+                            "content": "9 shows that the proposed TN-QDRL algorithm con-\nsistently maintains a high KGR, even as the number of vehicles\nAuthorized licensed use limited to: Indian Institute of Information Technology Design & Manufacturing."
+                        },
+                        {
+                            "id": 1468,
+                            "source": "sample1.pdf",
+                            "page_number": 8,
+                            "similarity": 0.48341247637123497,
+                            "content": "Cham: Springer International Publishing."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": null,
+                        "recall_at_k": null,
+                        "reciprocal_rank": null,
+                        "relevant_chunks": 0,
+                        "retrieved_chunks": 10
+                    }
+                },
+                {
+                    "id": "q6",
+                    "question": "What is the author's personal phone number?",
+                    "expected_chunk_ids": [],
+                    "retrieved_chunks": [
+                        {
+                            "id": 2268,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.5955833146250058,
+                            "content": "He\nis the author of four books and more than 80 articles. His research interests include industrial Internet of Things and applications,\ndigital transformation and innovation, information systems strategy, quality\nmanagement, and healthcare service management. He is the Managing Editor\nof the Journal Enterprise Information Systems, and an Associate Editor for the\nJournal of Global Information Management and Journal of Organizational and\nEnd User Computing."
+                        },
+                        {
+                            "id": 2263,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.5655711058720333,
+                            "content": "She has authored or\ncoauthored more than 130 articles in various international journals and seminars. Her research interests include logistics and supply chain management, industrial\nInternet of Things, cyber-physical systems, data analytics, and swam intelligence\noptimization."
+                        },
+                        {
+                            "id": 1520,
+                            "source": "sample4.pdf",
+                            "page_number": 1,
+                            "similarity": 0.5642670239766229,
+                            "content": "(Corresponding author: Yung Po Tsang.)\nKening Zhang, Carman K."
+                        },
+                        {
+                            "id": 1448,
+                            "source": "sample1.pdf",
+                            "page_number": 7,
+                            "similarity": 0.555161837156699,
+                            "content": "Cluster Computing,\n27(7), 8965-8982."
+                        },
+                        {
+                            "id": 975,
+                            "source": "sample3.pdf",
+                            "page_number": 15,
+                            "similarity": 0.5506226463807775,
+                            "content": "Shabtai, “Kitsune: An\nensemble of autoencoders for online network intrusion detection,”\n2018, arXiv:1802.09089."
+                        },
+                        {
+                            "id": 1308,
+                            "source": "sample3.pdf",
+                            "page_number": 16,
+                            "similarity": 0.5442227019733328,
+                            "content": "english\nendowed professor of computer science with Virginia\nTech and a fellow of the ACM. Her research interests\ncover many topics in the cybersecurity ﬁeld, with\nher current research focusing on wireless network\nsecurity, trustworthy AI, blockchain, and security\nand privacy problems in the Internet of Things (IoT)\nsystems. She is a highly cited researcher by the Web\nof Science Group. She received the Virginia Tech\nAlumni Award for Research Excellence, in 2018. She\nreceived the INFOCOM Test-of-Time paper award, in\n2020. She was the TPC chair for IEEE INFOCOM 2019 and ACM WiSec 2020. She was the Steering Committee Chair for IEEE CNS conference from 2013 to\n2020. She is currently the vice chair of IEEE INFOCOM steering committee. She served as a program director with the US National Science Foundation\n(NSF) from 2014 to 2017."
+                        },
+                        {
+                            "id": 1311,
+                            "source": "sample3.pdf",
+                            "page_number": 16,
+                            "similarity": 0.5431418418885666,
+                            "content": "His current research focuses on develop-\ning real-time optimal solutions to complex science\nand engineering problems arising from wireless and\nmobile networks. He is also interested in wireless\nsecurity. He has published more than 350 papers in IEEE/ACM journals and\nconferences. His papers were recognized by 12 best paper awards from IEEE\nand ACM, including an IEEE INFOCOM Test of Time Paper Award in 2023."
+                        },
+                        {
+                            "id": 2178,
+                            "source": "sample4.pdf",
+                            "page_number": 17,
+                            "similarity": 0.5410051101415732,
+                            "content": "24260–24273, 2018."
+                        },
+                        {
+                            "id": 487,
+                            "source": "sample3.pdf",
+                            "page_number": 1,
+                            "similarity": 0.5391251439674583,
+                            "content": "This work\nwas supported in part by the Ofﬁce of Naval Research under Grant N00014-24-1-\n2730 and Grant N00014-19-1-2621, in part by the National Science Foundation\nunder Grant 2312447, Grant 2247560, Grant 2154929, Grant 2332675, Grant\n2331936, and Grant 2235232, and in part by Virginia Commonwealth Cyber\nInitiative (CCI). (Corresponding author: Ning Wang.)\nNing Wang is with the Department of Computer Science and Engineering,\nUniversity of South Florida, Tampa, FL 33620 USA (e-mail: ning18@vt.edu)."
+                        },
+                        {
+                            "id": 1435,
+                            "source": "sample1.pdf",
+                            "page_number": 7,
+                            "similarity": 0.5376226927683274,
+                            "content": "Cluster Computing, 23(4), 2871-2889."
+                        }
+                    ],
+                    "metrics": {
+                        "precision_at_k": null,
+                        "recall_at_k": null,
+                        "reciprocal_rank": null,
+                        "relevant_chunks": 0,
+                        "retrieved_chunks": 10
+                    }
+                }
+            ]
+        }
+    }
+}

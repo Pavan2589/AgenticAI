@@ -1,0 +1,249 @@
+{
+    "experiment": "Answer Correctness Evaluation",
+    "evaluation_method": "LLM-as-a-Judge",
+    "judge_model": "qwen3:4b",
+    "results": {
+        "A": {
+            "queries": [
+                {
+                    "id": "q1",
+                    "question": "What is Quantum Key Distribution (QKD), and why is it used?",
+                    "status": "evaluated",
+                    "abstained": false,
+                    "correct_abstention": null,
+                    "semantic_coverage": 100.0,
+                    "covered_key_points": 3,
+                    "total_key_points": 3,
+                    "evaluations": [
+                        {
+                            "key_point": "quantum mechanical principles",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "cryptographic key distribution",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "secure communication",
+                            "covered": true
+                        }
+                    ],
+                    "evaluation_error": null
+                },
+                {
+                    "id": "q2",
+                    "question": "How does the Proof-of-QK Stake consensus mechanism work?",
+                    "status": "evaluated",
+                    "abstained": false,
+                    "correct_abstention": null,
+                    "semantic_coverage": 100.0,
+                    "covered_key_points": 4,
+                    "total_key_points": 4,
+                    "evaluations": [
+                        {
+                            "key_point": "QK stakes",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "offloading tasks",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "decision weight",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "consensus",
+                            "covered": true
+                        }
+                    ],
+                    "evaluation_error": null
+                },
+                {
+                    "id": "q3",
+                    "question": "What is the role of blockchain in the proposed framework?",
+                    "status": "abstained_on_answerable_question",
+                    "abstained": true,
+                    "correct_abstention": null,
+                    "semantic_coverage": null,
+                    "evaluations": [],
+                    "evaluation_error": null
+                },
+                {
+                    "id": "q4",
+                    "question": "What is the exact computational complexity of the proposed algorithm?",
+                    "status": "evaluated",
+                    "abstained": false,
+                    "correct_abstention": null,
+                    "semantic_coverage": 0.0,
+                    "covered_key_points": 0,
+                    "total_key_points": 3,
+                    "evaluations": [
+                        {
+                            "key_point": "MPS training complexity",
+                            "covered": false
+                        },
+                        {
+                            "key_point": "QDRL execution complexity",
+                            "covered": false
+                        },
+                        {
+                            "key_point": "total TN-QDRL complexity",
+                            "covered": false
+                        }
+                    ],
+                    "evaluation_error": null
+                },
+                {
+                    "id": "q5",
+                    "question": "What is the population of Chennai?",
+                    "status": "unanswerable",
+                    "abstained": true,
+                    "correct_abstention": true,
+                    "semantic_coverage": null,
+                    "evaluations": [],
+                    "evaluation_error": null
+                },
+                {
+                    "id": "q6",
+                    "question": "What is the author's personal phone number?",
+                    "status": "unanswerable",
+                    "abstained": true,
+                    "correct_abstention": true,
+                    "semantic_coverage": null,
+                    "evaluations": [],
+                    "evaluation_error": null
+                }
+            ],
+            "metrics": {
+                "total_questions": 6,
+                "evaluated_answers": 3,
+                "evaluation_errors": 0,
+                "abstained_on_answerable": 1,
+                "unanswerable_questions": 2,
+                "correctly_abstained": 2,
+                "average_semantic_coverage": 66.67,
+                "abstention_accuracy": 100.0
+            }
+        },
+        "B": {
+            "queries": [
+                {
+                    "id": "q1",
+                    "question": "What is Quantum Key Distribution (QKD), and why is it used?",
+                    "status": "evaluated",
+                    "abstained": false,
+                    "correct_abstention": null,
+                    "semantic_coverage": 100.0,
+                    "covered_key_points": 3,
+                    "total_key_points": 3,
+                    "evaluations": [
+                        {
+                            "key_point": "quantum mechanical principles",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "cryptographic key distribution",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "secure communication",
+                            "covered": true
+                        }
+                    ],
+                    "evaluation_error": null
+                },
+                {
+                    "id": "q2",
+                    "question": "How does the Proof-of-QK Stake consensus mechanism work?",
+                    "status": "evaluated",
+                    "abstained": false,
+                    "correct_abstention": null,
+                    "semantic_coverage": 100.0,
+                    "covered_key_points": 4,
+                    "total_key_points": 4,
+                    "evaluations": [
+                        {
+                            "key_point": "QK stakes",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "offloading tasks",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "decision weight",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "consensus",
+                            "covered": true
+                        }
+                    ],
+                    "evaluation_error": null
+                },
+                {
+                    "id": "q3",
+                    "question": "What is the role of blockchain in the proposed framework?",
+                    "status": "evaluated",
+                    "abstained": false,
+                    "correct_abstention": null,
+                    "semantic_coverage": 100.0,
+                    "covered_key_points": 2,
+                    "total_key_points": 2,
+                    "evaluations": [
+                        {
+                            "key_point": "blockchain",
+                            "covered": true
+                        },
+                        {
+                            "key_point": "decentralized coordination",
+                            "covered": true
+                        }
+                    ],
+                    "evaluation_error": null
+                },
+                {
+                    "id": "q4",
+                    "question": "What is the exact computational complexity of the proposed algorithm?",
+                    "status": "abstained_on_answerable_question",
+                    "abstained": true,
+                    "correct_abstention": null,
+                    "semantic_coverage": null,
+                    "evaluations": [],
+                    "evaluation_error": null
+                },
+                {
+                    "id": "q5",
+                    "question": "What is the population of Chennai?",
+                    "status": "unanswerable",
+                    "abstained": true,
+                    "correct_abstention": true,
+                    "semantic_coverage": null,
+                    "evaluations": [],
+                    "evaluation_error": null
+                },
+                {
+                    "id": "q6",
+                    "question": "What is the author's personal phone number?",
+                    "status": "unanswerable",
+                    "abstained": true,
+                    "correct_abstention": true,
+                    "semantic_coverage": null,
+                    "evaluations": [],
+                    "evaluation_error": null
+                }
+            ],
+            "metrics": {
+                "total_questions": 6,
+                "evaluated_answers": 3,
+                "evaluation_errors": 0,
+                "abstained_on_answerable": 1,
+                "unanswerable_questions": 2,
+                "correctly_abstained": 2,
+                "average_semantic_coverage": 100.0,
+                "abstention_accuracy": 100.0
+            }
+        }
+    }
+}

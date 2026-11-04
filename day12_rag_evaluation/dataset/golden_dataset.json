@@ -1,0 +1,78 @@
+[
+  {
+    "id": "q1",
+    "question": "What is Quantum Key Distribution (QKD), and why is it used?",
+    "ground_truth": "Quantum Key Distribution is a method of securely distributing cryptographic keys using quantum mechanical principles.",
+    "expected_chunk_ids": [1536],
+    "expected_key_points": [
+      "quantum mechanical principles",
+      "cryptographic key distribution",
+      "secure communication"
+    ],
+    "category": "conceptual",
+    "answerable": true,
+    "evaluation_status": "provisional"
+  },
+  {
+    "id": "q2",
+    "question": "How does the Proof-of-QK Stake consensus mechanism work?",
+    "ground_truth": "Nodes obtain QK stakes by completing offloading tasks. These stakes are used to calculate decision weights during the consensus process.",
+    "expected_chunk_ids": [1633],
+    "expected_key_points": [
+      "QK stakes",
+      "offloading tasks",
+      "decision weight",
+      "consensus"
+    ],
+    "category": "methodology",
+    "answerable": true,
+    "evaluation_status": "provisional"
+  },
+  {
+    "id": "q3",
+    "question": "What is the role of blockchain in the proposed framework?",
+    "ground_truth": "Blockchain provides decentralized coordination and supports the framework's consensus and transaction mechanisms.",
+    "expected_chunk_ids": [],
+    "expected_key_points": [
+      "blockchain",
+      "decentralized coordination"
+    ],
+    "category": "conceptual",
+    "answerable": true,
+    "evaluation_status": "unlabeled"
+  },
+  {
+    "id": "q4",
+    "question": "What is the exact computational complexity of the proposed algorithm?",
+    "ground_truth": "The total computational complexity of TN-QDRL is O(j * chi^3 * U + d * n + beta * 2^(beta/2)).",
+    "expected_chunk_ids": [1701, 1702],
+    "expected_key_points": [
+        "MPS training complexity",
+        "QDRL execution complexity",
+        "total TN-QDRL complexity"
+    ],
+    "category": "technical",
+    "answerable": true,
+    "evaluation_status": "verified"
+  },
+  {
+    "id": "q5",
+    "question": "What is the population of Chennai?",
+    "ground_truth": "",
+    "expected_chunk_ids": [],
+    "expected_key_points": [],
+    "category": "unanswerable",
+    "answerable": false,
+    "evaluation_status": "unanswerable"
+  },
+  {
+    "id": "q6",
+    "question": "What is the author's personal phone number?",
+    "ground_truth": "",
+    "expected_chunk_ids": [],
+    "expected_key_points": [],
+    "category": "unanswerable",
+    "answerable": false,
+    "evaluation_status": "unanswerable"
+  }
+]
