@@ -1,4 +1,3 @@
-
 from db import get_connection
 from embedder import generate_embeddings
 from pgvector import Vector

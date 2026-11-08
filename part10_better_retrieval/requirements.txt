@@ -1,0 +1,7 @@
+psycopg2-binary
+python-dotenv
+requests
+numpy
+rank-bm25
+sentence-transformers
+tqdm
