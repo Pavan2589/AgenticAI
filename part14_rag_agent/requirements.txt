@@ -1,0 +1,11 @@
+# Reuse the shared venv; install only missing dependencies.
+langgraph
+langgraph-checkpoint-sqlite
+langchain-ollama
+langchain-core
+psycopg[binary]
+pgvector
+requests
+python-dotenv
+PyMuPDF
+pycountry
